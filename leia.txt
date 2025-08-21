@@ -1,0 +1,17 @@
+estrutura esperada para criar manualmente:
+
+estudantes/
+│── docker-compose.yml
+│── src/                    # código Laravel
+│── php/
+│   └── Dockerfile
+│── nginx/                  # configs do Nginx
+│   └── default.conf
+|── .env                    # para dados do banco de dados
+
+
+para gerenciar o projeto laravel:
+docker compose run --rm estudantes_app <comando>
+
+consulta com nome do container:
+docker ps --format "table {{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Status}}"
