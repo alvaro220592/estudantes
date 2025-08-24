@@ -8,4 +8,13 @@ export default defineConfig({
             refresh: true,
         }),
     ],
+    server: {
+        host: "0.0.0.0", // precisa disso dentro do container
+        port: 5173,
+        strictPort: true,
+        hmr: {
+            host: "191.252.214.80",
+            port: 5173
+        }
+    }
 });

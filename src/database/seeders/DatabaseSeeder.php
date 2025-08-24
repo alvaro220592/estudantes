@@ -18,12 +18,15 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
 
-        $email = 'alvaro220592@gmail.com';
-        if (!User::where('email', $email)->exists()) {
-            User::factory()->create([
-                'name' => 'Álvaro',
-                'email' => $email,
-            ]);
+        $emails = ['alvaro220592@gmail.com', 're079@gmail.com'];
+
+        foreach($emails as $email){
+            if (!User::where('email', $email)->exists()) {
+                User::factory()->create([
+                    'name' => explode('@', $email)[0],
+                    'email' => $email,
+                ]);
+            }
         }
 
         Classe::factory()->count(4)->create();
